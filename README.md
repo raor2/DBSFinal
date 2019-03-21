@@ -2,6 +2,8 @@
 Final Project for Database Systems S19
 
 
+## Application Features
+
 
 ## User Instructions
 
@@ -12,5 +14,9 @@ DB Name: 	finalproject
 
 DB User: 	finalproject
 
-DB password:	finalproject 
+DB password:	finalproject
+
+
+### Application Instructions
+ 
 
