@@ -1,14 +1,31 @@
 import csv
+import psycopg2
+import psycopg2.extras
+
 
 crimeFile = open('crimeData.csv')
 employmentFile = open('employmentData.csv')
 
+crimeReader = csv.reader(crimeFile)
+employmentReader = csv.reader(employmentFile)
 
-crimes = crimeFile.read()
-crimesHeading = "County,Agency,Year,Months,Report,Index Total,Violent Total,Murder,Rape,Robbery,Aggravated Assault,Property Total,Burglary,LarcenyMotor Vehicle Theft,Region"
-#crimesHeading = crimesHeading.replace(",","\t")
-#crimes = crimes.replace(",","\t")
+for row in crimeReader:
+    print(row)
+
+for row in employmentReader:
+    print(row)
 
 
-print(crimesHeading)
-print(crimes)
+
+
+
+
+
+crimeFile.close()
+employmentFile.close()
+
+
+
+
+
+
