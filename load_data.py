@@ -17,10 +17,6 @@ for row in employmentReader:
 
 
 
-
-
-
-
 crimeFile.close()
 employmentFile.close()
 
