@@ -10,7 +10,10 @@ columnTitleRow = "Area, County\n"
 csv.write(columnTitleRow)
 
 for area in saved_column:
-	row = area + "\n"
-        print(row)
-        csv.write(row.replace(',',' '))
+    row = area + "\n"
+    row = row.replace(',',' ')
+    if 'County' in area:
+        row = area + "," + area + "\n"
+    csv.write(row)
 
+csv.close()
