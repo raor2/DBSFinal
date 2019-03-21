@@ -3,6 +3,7 @@
 import pandas as pd
 df = pd.read_csv('employmentData.csv')
 saved_column = list(set(df.Area))
+saved_column.sort()
 
 csv = open('Area_remap.csv', "w") 
 columnTitleRow = "Area, County\n"
