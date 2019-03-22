@@ -13,9 +13,6 @@ In this case, we duplicate the data three times and categorized them as Albany C
 
 - This part of the mapping was done by hand.
 
-
-###This part of the mapping was done by hand
-
 ## Application Features
 
 *TODO*
