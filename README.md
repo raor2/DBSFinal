@@ -3,8 +3,15 @@ Final Project for Database Systems S19
 
 Ryan, Daniel, Yang, Zhengneng
 
-## Data Cleaning
-The Area column from the 'employmentData.csv' includes all counties from the NY state, which we will be directly using. However, some area are specified as two or three counties together, such as: 'Albany-Rensselaer-Schenectady Counties', in this case, we duplicate the data three times and categorized them as Albany County, Rensselaer County and Schenectady County respectively. 
+## Area to County Mapping
+The Area column from the 'employmentData.csv' includes all counties from the NY state, which we will be directly using. 
+
+###'pull_Area.py' creates a 'Area_Remap.csv' that output the distinct 'Area' column in the 'employmentData.csv' file and replicate any indivisual county to 'County'.
+
+However, some area are specified as two or three counties together, such as: 'Albany-Rensselaer-Schenectady Counties', 
+in this case, we duplicate the data three times and categorized them as Albany County, Rensselaer County and Schenectady County respectively. 
+
+###This part of the mapping was done by hand
 
 ## Application Features
 
