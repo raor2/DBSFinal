@@ -5,7 +5,7 @@ df = pd.read_csv('employmentData.csv')
 saved_column = list(set(df.Area))
 saved_column.sort()
 
-csv = open('Area_remap.csv', "w") 
+csv = open('Area_remap_duplicate.csv', "w") 
 columnTitleRow = "Area, County\n"
 csv.write(columnTitleRow)
 
