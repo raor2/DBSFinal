@@ -10,8 +10,8 @@ DROP TABLE IF EXISTS Crime CASCADE;
 
 CREATE TABLE CountyLookup(
 	County VARCHAR(64) NOT NULL,
-	Agency VARCHAR(128) NOT NULL,
-	PRIMARY KEY(Agency)
+	Agency VARCHAR(128) NOT NULL
+	/*PRIMARY KEY(Agency)*/
 	/*FOREIGN KEY(County) REFERENCES AreaLookup(County)*/
 );
 
@@ -42,11 +42,11 @@ CREATE TABLE Wages(
 	Area VARCHAR(64) NOT NULL,
 	NAICS VARCHAR(10) NOT NULL,
 	Year INTEGER NOT NULL,
-	numEstablishments INTEGER NOT NULL,
-	avgEmployment INTEGER NOT NULL,
-	totalWage INTEGER NOT NULL,
-	annualAvgSalary INTEGER NOT NULL,
-	PRIMARY KEY(Area, NAICS, Year)
+	numEstablishments VARCHAR(32) NOT NULL,
+	avgEmployment VARCHAR(32) NOT NULL,
+	totalWage VARCHAR(32) NOT NULL,
+	annualAvgSalary VARCHAR(32) NOT NULL
+	/*PRIMARY KEY(Area, NAICS, Year)*/
 /*	FOREIGN KEY(Area) REFERENCES AreaTypeLookup(Area),
 	FOREIGN KEY(NAICS) REFERENCES NAICSLookup(NACIS),
 	FOREIGN KEY(Area) REFERENCES AreaLookup(Area)*/
@@ -55,27 +55,18 @@ CREATE TABLE Wages(
 CREATE TABLE Crime(
 	Agency VARCHAR(128) NOT NULL,
 	Year INTEGER NOT NULL,
-	MonthsReportedForCrime INTEGER NOT NULL,
-	totalCrimes INTEGER,
-	totalViolentCrimes INTEGER,
-	murderCrimes INTEGER,
-	rapeCrimes INTEGER,
-	robberyCrimes INTEGER,
-	aggravatedAssaultCrimes INTEGER,
-	totalPropertyCrimes INTEGER,
-	burgalaryCrimes INTEGER,
-	larcenyCrimes INTEGER,
-	motorVehicleTheftCrimes INTEGER,
-	PRIMARY KEY(Agency,Year)
+	MonthsReportedForCrime VARCHAR(32) NOT NULL,
+	totalCrimes VARCHAR(32),
+	totalViolentCrimes VARCHAR(32),
+	murderCrimes VARCHAR(32),
+	rapeCrimes VARCHAR(32),
+	robberyCrimes VARCHAR(32),
+	aggravatedAssaultCrimes VARCHAR(32),
+	totalPropertyCrimes VARCHAR(32),
+	burgalaryCrimes VARCHAR(32),
+	larcenyCrimes VARCHAR(32),
+	motorVehicleTheftCrimes VARCHAR(32)
 	/*FOREIGN KEY(Agency) REFERENCES CountyLookup(Agency)	*/
 );
 
-
-/*ALTER TABLE Wages ADD FOREIGN KEY(Area) REFERENCES AreaTypeLookup(Area);*/
-ALTER TABLE Wages ADD FOREIGN KEY(NAICS) REFERENCES NAICSLookup(NAICS);
-/*ALTR TABLE Wages ADD FOREIGN KEY(Area) REFERENCES AreaLookup(Area);*/
-ALTER TABLE Crime ADD FOREIGN KEY(Agency) REFERENCES CountyLookup(Agency);
-ALTER TABLE CountyLookup ADD FOREIGN KEY(County) REFERENCES AreaLookup(County);
-/*ALTER TABLE AreaLookup ADD FOREIGN KEY(County) REFERENCES CountyLookup(County);*/
-/*ALTER TABLE AreaLookup ADD FOREIGN KEY(Area) REFERENCES AreaTypeLookup(Area);*/
 

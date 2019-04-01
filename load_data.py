@@ -19,7 +19,7 @@ def setupDatabase():
 
 crimeFile = open('crimeData.csv')
 employmentFile = open('employmentData.csv')
-countyFile = open('Area_remap.csv')
+countyFile = open('areaTypeLookup.csv')
 
 crimeReader = csv.reader(crimeFile)
 employmentReader = csv.reader(employmentFile)
@@ -43,8 +43,8 @@ for row in employmentReader:
     with conn.cursor() as cursor:
         if(row[1] != 'Area' and not (row[1],row[0]) in areaTypeLookupAdded): 
             q1 = "INSERT INTO areatypelookup VALUES('" + row[1] + "' , '" + row[0] + "');"
-            print(q1)
-           # print(areaTypeLookupAdded)
+            #print(q1)
+            #print(areaTypeLookupAdded)
             cursor.execute(q1)
             conn.commit()
         
@@ -63,31 +63,43 @@ for row in employmentReader:
 
         if(row[2] != 'NAICS' and not (row[2],row[3]) in NAICSLookupAdded):
             q2 = "INSERT INTO naicslookup VALUES('" + row[2] + "', '" + row[3] + "');"
-            print(q2)
+            #print(q2)
             cursor.execute(q2)
             conn.commit()
             NAICSLookupAdded.append((row[2],row[3]))
 
 ###############TABLE 5#######################
 employmentFile.close()
-employmentFile = open('employmentData.csv')
+employmentFile = open('wages.csv')
+next(employmentFile)
 employmentReader = csv.reader(employmentFile)
+cursor = conn.cursor()
+cursor.copy_from(employmentFile, 'wages', sep=',')
+conn.commit()
 
 
+#############TABLE 6#######################
+crimeFile.close()
+crimeFile = open('crime.csv')
+next(crimeFile)
+cursor = conn.cursor()
+cursor.copy_from(crimeFile,'crime', sep = ',')
+conn.commit()
 
+################TABLE 2###################
+f = open('areaTypeLookup.csv')
+next(f)
+cursor = conn.cursor()
+cursor.copy_from(f,'areatypelookup', sep = ',')
+conn.commit()
 
-#print("Adding from Crimes File")
-#for row in crimeReader:
-#    with conn.cursor() as cursor:
-#        query = "INSERT INTO countylookup VALUES(" + "'" + row[0] + "' , '" + row[1] + "');"
-#        cursor.execute(query)
-#        conn.commit()
+################TABLE 1####################
+f = open('countyLookup.csv')
+next(f)
+cursor = conn.cursor()
+cursor.copy_from(f,'countylookup', sep = ',')
+conn.commit()
 
-
-#print(crimeArray[1][1])
-
-#for row in employmentReader:
-    #print(row)
 
 
 crimeFile.close()
