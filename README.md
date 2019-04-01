@@ -20,7 +20,12 @@ In this case, we duplicate the data three times and categorized them as Albany C
 ## User Instructions
 
 ### Creating Database and Loading Data
-Simply run the file load_data.py and the database will be created, intialized and populated with data using the following information:
+
+Creating and loading data is done in two steps
+
+First, run the file dbsetup.sql as a super user in postgres
+
+Then, run the file load_data.py and the database will be created, intialized and populated with data using the following information:
 
 DB Name: 	finalproject
 
