@@ -1,0 +1,2 @@
+https://data.ny.gov/api/views/ca8h-8gjq/rows.csv?accessType=DOWNLOAD&bom=true&format=true
+https://data.ny.gov/api/views/shc7-xcbw/rows.csv?accessType=DOWNLOAD&bom=true&format=true
