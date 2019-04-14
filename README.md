@@ -15,7 +15,15 @@ In this case, we duplicate the data three times and categorized them as Albany C
 
 ## Application Features
 
-*TODO*
+- Look up crime data based on the region (Area or County) or Year.
+
+- Look up employment data based on the Industry (Coded in number Categories).
+
+- Outputs the graph of crime rate history based on the region (Area or County).
+
+- Outputs the graph of crime rate vs employment based on the region (Area or County).
+
+- Outputs the best region(s) to live in based on user's preference on either low crime or high employment or somewhere in between. We devide the employment numbers by the crime numbers to obtain a ratio and use the ratio as the standard.
 
 ## User Instructions
 
