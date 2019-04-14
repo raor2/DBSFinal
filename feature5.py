@@ -17,7 +17,8 @@ print(records)
 
 crime_employment_data = []
 for row in records[1:]:
-    data = [float(x.strip()) for x in row.split(',')]
+    print (row)
+    data = [float(x.strip()) for x in row.split('|')]
     ratio = data[0]/data[1]
     data.append(ratio)
     crime_employment_data.append(data)
