@@ -7,12 +7,12 @@ import psycopg2.extras
 def setupDatabase():
     connection_string = "host='localhost' dbname='finalproject' user='finalproject' password='finalproject'"
     conn = psycopg2.connect(connection_string, cursor_factory=psycopg2.extras.DictCursor)
-    
+
     with conn.cursor() as cursor:
         with open('makeTable.sql','r') as project_data:
             queries = project_data.read()
             cursor.execute(queries)
-        
+
         conn.commit()
 
 
@@ -41,17 +41,17 @@ setupDatabase()
 ##############TABLE 3######################
 for row in employmentReader:
     with conn.cursor() as cursor:
-        if(row[1] != 'Area' and not (row[1],row[0]) in areaTypeLookupAdded): 
+        if(row[1] != 'Area' and not (row[1],row[0]) in areaTypeLookupAdded):
             q1 = "INSERT INTO areatypelookup VALUES('" + row[1] + "' , '" + row[0] + "');"
             #print(q1)
             #print(areaTypeLookupAdded)
             cursor.execute(q1)
             conn.commit()
-        
+
             areaTypeLookupAdded.append((row[1],row[0]))
 
 
-#############TABLE 4######################            
+#############TABLE 4######################
 employmentFile.close()
 employmentFile = open('employmentData.csv')
 employmentReader = csv.reader(employmentFile)
@@ -71,7 +71,8 @@ for row in employmentReader:
 ###############TABLE 5#######################
 employmentFile.close()
 employmentFile = open('wages.csv')
-next(employmentFile)
+employmentFile.readline()
+#readline(employmentFile)
 employmentReader = csv.reader(employmentFile)
 cursor = conn.cursor()
 cursor.copy_from(employmentFile, 'wages', sep=',')
@@ -81,21 +82,22 @@ conn.commit()
 #############TABLE 6#######################
 crimeFile.close()
 crimeFile = open('crime.csv')
-next(crimeFile)
+crimeFile.readline()
 cursor = conn.cursor()
 cursor.copy_from(crimeFile,'crime', sep = ',')
 conn.commit()
 
 ################TABLE 2###################
 f = open('areaTypeLookup.csv')
-next(f)
+f.readline()
 cursor = conn.cursor()
 cursor.copy_from(f,'areatypelookup', sep = ',')
 conn.commit()
 
 ################TABLE 1####################
 f = open('countyLookup.csv')
-next(f)
+f.readline()
+#readline(f)
 cursor = conn.cursor()
 cursor.copy_from(f,'countylookup', sep = ',')
 conn.commit()
@@ -104,9 +106,3 @@ conn.commit()
 
 crimeFile.close()
 employmentFile.close()
-
-
-
-
-
-
