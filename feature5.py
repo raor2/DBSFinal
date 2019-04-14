@@ -20,5 +20,4 @@ for row in records[1:]:
     data.append(ratio)
     crime_employment_data.append(data)
 
-print crime_employment_data
 
