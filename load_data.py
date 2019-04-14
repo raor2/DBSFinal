@@ -103,6 +103,5 @@ cursor.copy_from(f,'countylookup', sep = ',')
 conn.commit()
 
 
-
 crimeFile.close()
 employmentFile.close()
