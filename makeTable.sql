@@ -18,7 +18,7 @@ CREATE TABLE CountyLookup(
 
 CREATE TABLE AreaLookup(
 	Area VARCHAR(64) NOT NULL,
-	County VARCHAR(64) NOT NULL UNIQUE
+	County VARCHAR(64) NOT NULL
 /*	PRIMARY KEY(Area)*/
 	/*FOREIGN KEY(County) REFERENCES CountyLookup(County),
 	FOREIGN KEY(Area) REFERENCES AreaTypeLookup(Area)*/

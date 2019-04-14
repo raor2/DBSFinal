@@ -91,7 +91,7 @@ conn.commit()
 f = open('areaTypeLookup.csv')
 f.readline()
 cursor = conn.cursor()
-cursor.copy_from(f,'areatypelookup', sep = ',')
+cursor.copy_from(f,'arealookup', sep = ',')
 conn.commit()
 
 ################TABLE 1####################
