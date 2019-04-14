@@ -12,6 +12,8 @@ cursor.execute("SELECT w.avgEmployment as employment, c.totalCrimes as crime \
                 AND cl.County = al.County \
                 AND al.Area = w.Area;")
 records = cursor.fetchall()
+print(records)
+
 
 crime_employment_data = []
 for row in records[1:]:
