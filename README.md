@@ -56,7 +56,6 @@ and
 - II. On a scale of 1-10, How much do you care about your future county's safety: 
 
 For example, if one cares very much about the employment rate but not too much about the safety, one would input 10 to question 1 and input 1 to question 2, the program then will return the top 10 list:
-
 (1, 'New York')
 (2, 'Kings')
 (3, 'Queens')
