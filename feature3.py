@@ -39,16 +39,12 @@ if int(locationChoice) == 1:
         year.append(int(row[1]))
         crime.append(int(row[2]))
 
-    # Normalize data for drawing
-    max_crime = max(crime)
-    crime = [c/max_crime for c in crime]
-
     # Draw graph
     plt.plot(year, crime)
     plt.title('Crime Rate History of {} Area'.format(area))
     plt.xlabel('Year')
     plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
-    plt.ylabel('Crime Rate')
+    plt.ylabel('Total Number of Crimes Reported')
     plt.show()
 elif int(locationChoice) == 2:
     # Option for displaying available counties
@@ -77,16 +73,12 @@ elif int(locationChoice) == 2:
         year.append(int(row[1]))
         crime.append(int(row[2]))
     
-    # Normalize data for drawing
-    max_crime = max(crime)
-    crime = [c/max_crime for c in crime]
-    
     # Draw graph
     plt.plot(year, crime)
     plt.title('Crime Rate History of {} County'.format(county))
     plt.xlabel('Year')
     plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
-    plt.ylabel('Crime Rate')
+    plt.ylabel('Total Number of Crimes Reported')
     plt.show()
 else:
     print("Invalid option\n")
