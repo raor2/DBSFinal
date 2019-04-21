@@ -43,11 +43,11 @@ while not mult2.isdigit():
 while not ((int(mult2) > 0) and (int(mult2) < 11)):
     mult2 = raw_input("Input must be an integer from 1 to 10, please re-enter: \n")
 
-ratio = (float(mult2))/float(mult1)
 
 best_county = []
 for county in crime_employment_data:
-    best_county.append((county, crime_employment_data[county][1]*ratio/crime_employment_data[county][0]))
+    ratio = float(mult1)*crime_employment_data[county][1]/10 + (1-float(mult2))*crime_employment_data[county][1]/10
+    best_county.append((county, 2*ratio/(crime_employment_data[county][1] + crime_employment_data[county][0])))
 
 best_county = sorted(best_county, key = lambda x: x[1], reverse = True)
 
