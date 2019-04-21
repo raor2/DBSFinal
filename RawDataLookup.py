@@ -25,6 +25,8 @@ def crimeDataLookup():
 
         area = input("Enter Area:\n")
         crime = crimes[int(input("Select type of crime:\n\t1. Murder\n\t2. Rape\n\t3. Robbery\n\t4. Aggravated Assault\n\t5. Burgalary\n\t6. Larceny\n")) - 1]
+
+
         #print("You've selected " + crime)
         q = "SELECT DISTINCT foo.area ,year, sum(CAST("+ crime + " AS INT)) as "+crime+" FROM (SELECT DISTINCT area, agency FROM arealookup LEFT JOIN countylookup on arealookup.county = countylookup.county WHERE area = '"+area+"' AND area <> ' ' ORDER BY agency) as foo  RIGHT JOIN crime ON crime.agency = foo.agency WHERE crime.agency <> 'County Total' AND "+crime+" <> '' AND area <> ''GROUP BY (foo.area, year) ORDER BY year ASC;"
         dict_cur.execute(q)
@@ -42,7 +44,14 @@ def crimeDataLookup():
                 yvals.append(row[2])
 
             #print("Generating Plot...")
-            plt.plot(xvals, yvals, label='Crime Data Bsed on Area')
+            plt.plot(xvals, yvals, label='Crime Data Based on Area')
+            if(crime == "aggravatedassaultcrimes"):
+                title = "Aggravated Assault"
+            else:
+                title = crime.replace("crimes", "")
+                title = title.capitalize()
+            
+            plt.title(title + " Crimes in the " + area + " Area")
             plt.show()
             #plot([go.Scatter(x=[1, 2, 3], y=[3, 1, 6])])
 
