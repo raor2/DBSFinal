@@ -9,16 +9,19 @@ conn = psycopg2.connect(connection_string, cursor_factory=psycopg2.extras.DictCu
 cursor = conn.cursor()
 
 # Option for choosing area or county
-locationChoice = input("Enter a selection:\n\t1. Search By Area\n\t2. Search By County\n")
-if int(locationChoice) == 1:
+option1 = input("Enter a selection:\n\t1. Search By Area\n\t2. Search By County\n")
+print()
+if int(option1) == 1:
     # Option for displaying available areas
-    inp = input("Would you like to see a list of available areas?\n\t1. Yes\n\t2. No\n")
-    if(int(inp) == 1):
-        print("List of Eligible Areas:\n")
-        cursor.execute("SELECT DISTINCT area FROM arealookup;")
+    option2 = input("Would you like to see a list of available areas?\n\t1. Yes\n\t2. No\n")
+    print()
+    if int(option2) == 1:
+        print("List of Eligible Areas:")
+        cursor.execute("SELECT DISTINCT area FROM arealookup ORDER BY area ASC;")
         data = cursor.fetchall()
         for row in data:
             print(row[0])
+    print()
 
     # Specify area
     area = input("Enter Area:\n")
@@ -43,18 +46,19 @@ if int(locationChoice) == 1:
     plt.plot(year, crime)
     plt.title('Crime Rate History of {} Area'.format(area))
     plt.xlabel('Year')
-    plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
     plt.ylabel('Total Number of Crimes Reported')
     plt.show()
-elif int(locationChoice) == 2:
+elif int(option1) == 2:
     # Option for displaying available counties
-    inp = input("Would you like to see a list of available counties?\n\t1. Yes\n\t2. No\n")
-    if(int(inp) == 1):
-        print("List of Eligible Counties:\n")
-        dict_cur.execute("SELECT DISTINCT county from countylookup;")
-        data = dict_cur.fetchall()
+    option2 = input("Would you like to see a list of available counties?\n\t1. Yes\n\t2. No\n")
+    print()
+    if int(option2) == 1:
+        print("List of Eligible Counties:")
+        cursor.execute("SELECT DISTINCT county from countylookup ORDER BY county ASC;")
+        data = cursor.fetchall()
         for row in data:
             print(row[0])
+    print()
 
     # Specify county
     county = input("Enter County:\n")
@@ -77,7 +81,6 @@ elif int(locationChoice) == 2:
     plt.plot(year, crime)
     plt.title('Crime Rate History of {} County'.format(county))
     plt.xlabel('Year')
-    plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
     plt.ylabel('Total Number of Crimes Reported')
     plt.show()
 else:
