@@ -41,13 +41,13 @@ DB User: 	finalproject
 
 DB password:	finalproject
 
-### Application Instructions
+## Application Instructions
 
-## Feature 1
-## Feature 2
-## Feature 3
-## Feature 4
-## Feature 5
+### Feature 1
+### Feature 2
+### Feature 3
+### Feature 4
+### Feature 5
 Feature 5 helps users to find the Best Counties to place their residency in based on their preference over the employment rate and the county's crime rate. User need to call the function 'TopCounties()'.
 
 The program will prompt user to input:
