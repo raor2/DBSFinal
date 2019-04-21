@@ -21,7 +21,7 @@ if int(option1) == 1:
         data = cursor.fetchall()
         for row in data:
             print(row[0])
-    print()
+        print()
 
     # Specify area
     area = input("Enter Area:\n")
@@ -58,7 +58,7 @@ elif int(option1) == 2:
         data = cursor.fetchall()
         for row in data:
             print(row[0])
-    print()
+        print()
 
     # Specify county
     county = input("Enter County:\n")
