@@ -30,7 +30,7 @@ if int(locationChoice) == 1:
                           WHERE arealookup.area = %s AND arealookup.county = countylookup.county) AS lookup, crime \
                     WHERE lookup.agency = crime.agency AND crime.agency <> 'County Total' AND crime.totalcrimes <> '' AND lookup.area <> '' \
                     GROUP BY lookup.area, crime.year \
-                    ORDER BY crimes.year ASC;", [area])
+                    ORDER BY crime.year ASC;", [area])
     records = cursor.fetchall()
 
     # Parse query result
@@ -45,7 +45,7 @@ if int(locationChoice) == 1:
 
     # Draw graph
     plt.plot(year, crime)
-    plt.title('Crime Rate History of %s Area', [area])
+    plt.title('Crime Rate History of {} Area'.format(area))
     plt.xlabel('Year')
     plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
     plt.ylabel('Crime Rate')
@@ -66,7 +66,7 @@ elif int(locationChoice) == 2:
     # Query data with specified county
     cursor.execute("SELECT DISTINCT countylookup.county, crime.year, sum(crime.totalcrimes::INT) AS totalcrimes \
                     FROM countylookup, crime \
-                    WHERE countylookup.county = '%s' AND countylookup.agency = crime.agency AND crime.agency <> 'County Total' AND crime.totalcrimes <> '' \
+                    WHERE countylookup.county = %s AND countylookup.agency = crime.agency AND crime.agency <> 'County Total' AND crime.totalcrimes <> '' \
                     GROUP BY countylookup.county, crime.year \
                     ORDER BY crime.year ASC;", [county])
     records = cursor.fetchall()
@@ -83,7 +83,7 @@ elif int(locationChoice) == 2:
     
     # Draw graph
     plt.plot(year, crime)
-    plt.title('Crime Rate History of %s County', [county])
+    plt.title('Crime Rate History of {} County'.format(county))
     plt.xlabel('Year')
     plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
     plt.ylabel('Crime Rate')
