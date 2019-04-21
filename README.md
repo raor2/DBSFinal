@@ -50,15 +50,13 @@ DB password:	finalproject
 ## Feature 5
 Feature 5 helps users to find the Best Counties to place their residency in based on their preference over the employment rate and the county's crime rate. User need to call the function 'TopCounties()'.
 
-The program will prompt user to input 
-I. On a scale of 1-10, How much do you care about your future county's employment rate: 
+The program will prompt user to input:
+- I. On a scale of 1-10, How much do you care about your future county's employment rate: 
 and
-II. On a scale of 1-10, How much do you care about your future county's safety: 
+- II. On a scale of 1-10, How much do you care about your future county's safety: 
 
 For example, if one cares very much about the employment rate but not too much about the safety, one would input 10 to question 1 and input 1 to question 2, the program then will return the top 10 list:
-=============================================
-TOP 10 NY COUNTIES TO PLACE YOUR RESIDENCY IN
-=============================================
+
 (1, 'New York')
 (2, 'Kings')
 (3, 'Queens')
