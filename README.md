@@ -49,7 +49,7 @@ DB password:	finalproject
 
 ### Feature 1 & 2 - Raw Data Lookup (Area or County)
 Feature 1 & 2 queries the raw data and plot the total crimes over the years based on Area or County. For example:
-![alt text](https://github.com/raor2/DBSFinal/blob/master/Results_Graph/Feature%201.png)
+![alt text](https://github.com/raor2/DBSFinal/blob/master/Results_Graph/Feature1.jpg)
 
 ### Feature 3 - Employment Based on Industry
 Feature 3 graphs the employment rate over the years, the data were then normalized for the purpose. The program prompt user to input the industry index. For wxample, if one inputs '', the result is as follows:
