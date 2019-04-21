@@ -1,13 +1,12 @@
 import psycopg2
 import psycopg2.extras
-import plotly.graph_objs as go
-from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 
 
 connection_string = "host='localhost' dbname='finalproject' user='finalproject' password='finalproject'"
 conn = psycopg2.connect(connection_string)
 crimes = ['murdercrimes', 'rapecrimes', 'robberycrimes', 'aggravatedassaultcrimes', 'burgalarycrimes', 'larcenycrimes']
-
 
 
 def crimeDataLookup():
@@ -43,7 +42,7 @@ def crimeDataLookup():
                 yvals.append(row[2])
 
             #print("Generating Plot...")
-            plot([go.Bar(x = xvals, y = yvals)])
+            plt.plot(xvals, yvals, label='Crime Data Bsed on Area')
             #plot([go.Scatter(x=[1, 2, 3], y=[3, 1, 6])])
 
 
@@ -76,7 +75,7 @@ def crimeDataLookup():
                 yvals.append(row[2])
 
             #print("Generating Plot...")
-            plot([go.Scatter(x = xvals, y = yvals)])
+            plt.plot(xvals, yvals, label='Crime Data Based on County')
     else:
         print("Invalid option\n")
 

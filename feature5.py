@@ -30,19 +30,19 @@ def TopCounties():
         crime_employment_data[row[0]] = (float(row[1]),float(row[2]))
     
     print("BEST NY COUNTIES TO PLACE YOUR RESIDENCY IN")
-    mult1 = raw_input("I. On a scale of 1-10, How much do you care about your future county's employment rate: \n")
+    mult1 = input("I. On a scale of 1-10, How much do you care about your future county's employment rate: \n")
     while not mult1.isdigit():
-        mult1 = raw_input("Input must be an integer from 1 to 10, please re-enter: \n")
+        mult1 = input("Input must be an integer from 1 to 10, please re-enter: \n")
     
     while not ((int(mult1) > 0) and (int(mult1) < 11)):
-        mult1 = raw_input("Input must be an integer from 1 to 10, please re-enter: \n")
+        mult1 = input("Input must be an integer from 1 to 10, please re-enter: \n")
             
-    mult2 = raw_input("II. On a scale of 1-10, How much do you care about your future county's safety: \n")
+    mult2 = input("II. On a scale of 1-10, How much do you care about your future county's safety: \n")
     while not mult2.isdigit():
-        mult2 = raw_input("Input must be an integer from 1 to 10, please re-enter: \n")
+        mult2 = input("Input must be an integer from 1 to 10, please re-enter: \n")
     
     while not ((int(mult2) > 0) and (int(mult2) < 11)):
-        mult2 = raw_input("Input must be an integer from 1 to 10, please re-enter: \n")
+        mult2 = input("Input must be an integer from 1 to 10, please re-enter: \n")
     
     
     best_county = []
@@ -61,6 +61,7 @@ def TopCounties():
         print(i, best_county[i-1][0])
         i += 1
 
+TopCounties()
 
 
 
