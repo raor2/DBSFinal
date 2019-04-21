@@ -10,22 +10,20 @@ cursor = conn.cursor()
 
 # Option for display available areas
 inp = input("Would you like to see a list of available areas?\n\t1. Yes\n\t2. No\n")
+print()
 if(int(inp) == 1):
-    print("List of Eligible Areas:\n")
-    cursor.execute("SELECT DISTINCT area FROM arealookup;")
+    print("List of Eligible Areas:")
+    cursor.execute("SELECT DISTINCT area FROM arealookup ORDER BY area ASC;")
     data = cursor.fetchall()
     for row in data:
         print(row[0])
+    print()
 
 # Specify area
 area = input("Enter Area:\n")
 
 '''
-    Problem 1: Employment data does not have county colunm
     Problem 2: Empty row of totalcrime means 0
-    Problem 3: Avgemployment usually remains constant while totalcrime decreases
-    Problem 4: Need the working age population to calculate Employment Rate；
-               Need total population to calculate Crime Rate per 100,000 Population
 '''
 # Query data with specified area
 cursor.execute("SELECT crimes.area, crimes.year, crimes.totalcrimes, wages.numestablishments, wages.avgemployment \
