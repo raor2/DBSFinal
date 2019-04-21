@@ -43,11 +43,19 @@ DB password:	finalproject
 
 ## Application Instructions
 
-### Feature 1
-### Feature 2
-### Feature 3
+### Execution
+
+
+### Feature 1 & 2 - Raw Data Lookup (Area or County)
+Feature 1 & 2 queries the raw data and plot the total crimes over the years based on Area or County. For example:
+![alt text](https://github.com/raor2/DBSFinal/blob/master/Results_Graph/Feature1&2.jpg)
+
+### Feature 3 - Employment Based on Industry
+Feature 3 graphs the employment rate over the years, the data were then normalized for the purpose. The program prompt user to input the industry index. For example, if one inputs 'Real Estate and Rental and Leasing', the result is as follows:
+![alt text](https://github.com/raor2/DBSFinal/blob/master/Results_Graph/Feature3.jpg)
+
 ### Feature 4 - Crime Rate & Employment Rate Based on Area
-Feature 4 graphs the crime rate and employment rate over the years, the data were normalized to one for the purpose. The program prompt user to input the area. For example, if one inputs 'Capital Area', the result is as follows:
+Feature 4 graphs the crime rate and employment rate over the years, the data were then normalized for the purpose. The program prompt user to input the area. For example, if one inputs 'Capital Area', the result is as follows:
 ![alt text](https://github.com/raor2/DBSFinal/blob/master/Results_Graph/Feature4.jpg)
 
 ### Feature 5 - Top NY Counties to Leave In
