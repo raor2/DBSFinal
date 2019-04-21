@@ -47,6 +47,9 @@ DB password:	finalproject
 ### Feature 2
 ### Feature 3
 ### Feature 4
+Feature 4 graphs the crime rate and employment rate over the years, the data were normalized to one for the purpose. The program prompt user to input the area. For example, if one inputs 'Capital Area', the result is as follows:
+![alt text](https://github.com/raor2/DBSFinal/blob/master/Results_Graph/Feature4.jpg)
+
 ### Feature 5
 Feature 5 helps users to find the Best Counties to place their residency in based on their preference over the employment rate and the county's crime rate. User need to call the function 'TopCounties()'.
 
@@ -56,15 +59,6 @@ and
 - II. On a scale of 1-10, How much do you care about your future county's safety: 
 
 For example, if one cares very much about the employment rate but not too much about the safety, one would input 10 to question 1 and input 1 to question 2, the program then will return the top 10 list:
-(1, 'New York')
-(2, 'Kings')
-(3, 'Queens')
-(4, 'Bronx')
-(5, 'Richmond')
-(6, 'Putnam')
-(7, 'Schoharie')
-(8, 'Herkimer')
-(9, 'Montgomery')
-
+![alt text](https://github.com/raor2/DBSFinal/blob/master/Results_Graph/Feature5.jpg)
  
 
