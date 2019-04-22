@@ -29,7 +29,7 @@ In this case, we duplicate the data three times and categorized them as Albany C
 
 ### Creating Database and Loading Data
 
-*NOTE: The .csv files are not included in the final project submission (Submitty) due to file size. There will be a link in a file called CSV_FILES.txt to a Google Drive Folder with all necessary .csv files* 
+*NOTE: The .csv files are not included in the final project submission (Submitty) due to file size. There will be a link in a file called CSV_FILES.txt to a Google Drive Folder with all necessary .csv files. Additionally, these files can be found in this repository on GitHub https://github.com/raor2/DBSFinal* 
 
 Creating and loading data is done in two steps
 
