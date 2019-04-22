@@ -13,7 +13,7 @@ while(1):
     if(choice == 'q'):
         break
     if(choice == 'f'):
-        print("List of Available Features:\n\t1. Explore Crime Data by Area and by County\n\t2. Explore New York Industry Data by Area\n\t3. Visualize Employment and Crime Data For a Given Area\n\t4. Prioritized Living Area R   ecommendation Based On Crime and Employment ")
+        print("List of Available Features:\n\t1. Explore Crime Data by Area and by County\n\t2. Explore New York Industry Data by Area\n\t3. Visualize Employment and Crime Data For a Given Area\n\t4. Prioritized Living Area Recommendation Based On Crime and Employment ")
     if(choice == '1'):
         print("Feature 1")
         exec(open('feature1.py').read())
