@@ -3,6 +3,9 @@ Final Project for Database Systems S19
 
 Ryan, Daniel, Yang, Zhengneng
 
+*Note for Professor Johnson: The schema we are using in this application is updated from the initial grading. Please regrade the initial schema*
+
+
 ## Area to County Mapping
 The Area column from the 'employmentData.csv' includes all counties from the NY state, which we will be directly using. 
 
